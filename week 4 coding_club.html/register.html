@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campus Coding Club Student Registration">
+    <meta name="author" content="Coding Club">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Coding Club - Register</title>
+</head>
+<body>
+
+    <header>
+        <h1>Campus Coding Club</h1>
+        <p>Learn, Build, and Innovate Together</p>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <section id="registration">
+            <h2>Student Registration Form</h2>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <p>
+                        <label for="fullName">Full Name:</label><br>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </p>
+
+                    <p>
+                        <label for="userEmail">College Email:</label><br>
+                        <input type="email" id="userEmail" name="userEmail" required>
+                    </p>
+
+                    <p>
+                        <label for="userPassword">Create Password:</label><br>
+                        <input type="password" id="userPassword" name="userPassword" required>
+                    </p>
+
+                    <p>
+                        <label for="phoneNum">Phone Number:</label><br>
+                        <input type="tel" id="phoneNum" name="phoneNum" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                    </p>
+
+                    <p>
+                        <label for="dob">Date of Birth:</label><br>
+                        <input type="date" id="dob" name="dob" required>
+                    </p>
+
+                    <p>
+                        <label>Gender:</label><br>
+                        <input type="radio" id="genderMale" name="gender" value="male">
+                        <label for="genderMale">Male</label>
+
+                        <input type="radio" id="genderFemale" name="gender" value="female">
+                        <label for="genderFemale">Female</label>
+
+                        <input type="radio" id="genderOther" name="gender" value="other">
+                        <label for="genderOther">Other</label>
+                    </p>
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>Club Preferences & Interests</legend>
+
+                    <p>
+                        <label for="department">Select Your Department / Year:</label><br>
+                        <select id="department" name="department" required>
+                            <option value="">-- Choose an option --</option>
+                            <option value="btech_cse_1">B.Tech CSE - 1st Year</option>
+                            <option value="btech_cse_2">B.Tech CSE - 2nd Year</option>
+                            <option value="btech_it">B.Tech IT</option>
+                            <option value="bca">BCA</option>
+                            <option value="mca">MCA</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label>Technical Interests (Choose all that apply):</label><br>
+                        <input type="checkbox" id="interestWeb" name="interest" value="web">
+                        <label for="interestWeb">Web Development (HTML, CSS, JS)</label><br>
+
+                        <input type="checkbox" id="interestCP" name="interest" value="cp">
+                        <label for="interestCP">Competitive Programming & DSA</label><br>
+
+                        <input type="checkbox" id="interestAI" name="interest" value="ai">
+                        <label for="interestAI">AI & Machine Learning</label><br>
+
+                        <input type="checkbox" id="interestApp" name="interest" value="app">
+                        <label for="interestApp">Android / Mobile App Development</label>
+                    </p>
+
+                    <p>
+                        <label for="statement">Why do you want to join the Coding Club?</label><br>
+                        <textarea id="statement" name="statement" rows="5" cols="45" placeholder="Share your expectations, goals, or past projects..."></textarea>
+                    </p>
+
+                </fieldset>
+
+                <br>
+
+                <input type="submit" value="Register Now">
+                <input type="reset" value="Clear Form">
+
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Campus Coding Club. All rights reserved.</p>
+        <p>Contact: codingclub@college.edu | Computer Science Block</p>
+    </footer>
+
+</body>
+</html>
