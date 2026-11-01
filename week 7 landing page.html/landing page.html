@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Header - Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.25rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 45vh;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+            gap: 1rem;
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            max-width: 700px;
+        }
+
+        .banner p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 550px;
+            line-height: 1.6;
+        }
+
+        .banner .cta-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .cards-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #1e293b;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">CodeLaunch</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <button class="nav-btn">Get Started</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Build and Scale Web Apps Faster with Flexbox</h1>
+            <p>Master modern responsive layout architecture with CSS Flexbox. Clean, modular, and responsive across every device.</p>
+            <button class="cta-btn">Explore Course</button>
+        </section>
+
+        <section class="cards-section" id="features">
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Flexible Navigation</h3>
+                    <p>Clean alignment using justify-content and space-between distribution across modern navbars.</p>
+                </div>
+                <div class="card">
+                    <h3>Perfect Centering</h3>
+                    <p>Effortlessly center items horizontally and vertically without hacky margins or positions.</p>
+                </div>
+                <div class="card">
+                    <h3>Adaptive Wrapping</h3>
+                    <p>Cards automatically wrap onto the next line smoothly when screen space runs out.</p>
+                </div>
+                <div class="card">
+                    <h3>Responsive Growth</h3>
+                    <p>With flex: 1 1 200px, cards automatically shrink or expand to fill available grid space.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
