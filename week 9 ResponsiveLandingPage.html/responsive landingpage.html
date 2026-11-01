@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 2rem;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 1.2rem;
+        }
+
+        .cta-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.6rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .hero-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .features {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card h2 {
+            font-size: 1.2rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        @media (min-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem 2.5rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+                padding: 2.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .page-layout {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1.15rem;
+            }
+
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-layout">
+
+        <header>
+            <nav class="navbar">
+                <a href="#" class="logo">DevStudio</a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <button class="nav-btn">Get Started</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Build High-Speed Responsive Web Applications</h1>
+                    <p>Modern responsive architecture crafted with Mobile-First CSS, Flexbox, and Grid systems for all devices.</p>
+                    <button class="cta-btn">Start Project</button>
+                </div>
+                <div class="hero-image">
+                    <!-- Yaha par apni picture ka path daalein -->
+                    <img src="mypic.jpg" alt="Landing Page Banner">
+                </div>
+            </section>
+
+            <section class="features" id="features">
+                <div class="feature-card">
+                    <h2>Mobile First</h2>
+                    <p>Designed for mobile screens initially, scaling up progressively to tablets and desktop viewports.</p>
+                </div>
+                <div class="feature-card">
+                    <h2>CSS Grid Layout</h2>
+                    <p>Structural sections built with standard multi-column grid declarations for clean layout flows.</p>
+                </div>
+                <div class="feature-card">
+                    <h2>Flexbox Navigation</h2>
+                    <p>Navbar links adapt horizontally and align smoothly using Flexbox properties across all viewports.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 DevStudio. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

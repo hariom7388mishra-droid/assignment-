@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CSS Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        /* ==========================================
+           8.1 & 8.3 MAIN GRID LAYOUT & NAMED AREAS
+           ========================================== */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            grid-template-rows: 60px 1fr 50px;
+            grid-template-areas:
+                "head head"
+                "side main"
+                "foot foot";
+            gap: 1rem;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        /* 8.3 Top Bar */
+        .top-bar {
+            grid-area: head;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .top-bar h1 {
+            font-size: 1.25rem;
+            color: #2563eb;
+        }
+
+        /* 8.3 Sidebar */
+        .sidebar {
+            grid-area: side;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            display: block;
+            padding: 0.6rem 0.8rem;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: #eff6ff;
+            color: #2563eb;
+        }
+
+        /* 8.3 Main Content Area */
+        .main-content {
+            grid-area: main;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-content h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ==========================================
+           8.2 AUTO-FIT STATS GRID WITH REPEAT & MINMAX
+           ========================================== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        /* ==========================================
+           8.4 CARDS WITH FLEXBOX (ICON + TEXT SIDE BY SIDE)
+           ========================================== */
+        .stat-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background-color: #dbeafe;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-info span {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        .stat-info strong {
+            font-size: 1.15rem;
+            color: #0f172a;
+        }
+
+        /* 8.3 Footer */
+        .footer {
+            grid-area: foot;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: #64748b;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive Layout for smaller screens */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-areas:
+                    "head"
+                    "side"
+                    "main"
+                    "foot";
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <header class="top-bar">
+            <h1>Admin Panel</h1>
+            <span>Welcome, Hariom</span>
+        </header>
+
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Overview</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Members</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>System Overview</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <span>Total Users</span>
+                        <strong>1,248</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💻</div>
+                    <div class="stat-info">
+                        <span>Projects</span>
+                        <strong>42</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <span>Active Tasks</span>
+                        <strong>18</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-info">
+                        <span>Events</span>
+                        <strong>7</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-info">
+                        <span>Growth</span>
+                        <strong>+24%</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔔</div>
+                    <div class="stat-info">
+                        <span>Alerts</span>
+                        <strong>3</strong>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Developer Dashboard. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
