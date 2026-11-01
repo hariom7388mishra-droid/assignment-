@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campus Coding Club Events and Registration">
+    <title>Coding Club - Single Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #6366f1;
+            --primary-hover: #4f46e5;
+            --accent-glow: #06b6d4;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: rgba(226, 232, 240, 0.8);
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --radius-md: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0c4a6e 100%);
+            background-attachment: fixed;
+            padding: var(--space-md);
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: var(--space-lg) var(--space-md);
+            background-color: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #4f46e5, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-sm);
+            line-height: 1.2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        #hero {
+            background-color: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-md);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #e0e7ff;
+            color: #1e1b4b;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: var(--space-sm);
+            margin-top: var(--space-sm);
+            margin-bottom: var(--space-md);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: #ffffff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+            transition: opacity 0.2s ease;
+        }
+
+        input[type="reset"] {
+            background: #64748b;
+            box-shadow: none;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: var(--space-lg) 0;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Campus Coding Club</h1>
+        <p>Learn, Build, and Innovate Together</p>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#registration">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <h2>Welcome to Coding Club</h2>
+            <p>
+                Welcome to the official portal of our college Coding Club. We organize weekly workshops, competitive programming contests, and hands-on hackathons to help students master coding skills.
+            </p>
+        </section>
+
+        <section class="card" id="events">
+            <h2>Upcoming Club Events</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event ID</th>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                        <th>Entry Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EVT-101</td>
+                        <td>Web Development Bootcamp</td>
+                        <td>10 November 2026</td>
+                        <td>Computer Lab 2</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td>EVT-102</td>
+                        <td>Code Sprint Hackathon</td>
+                        <td>25 November 2026</td>
+                        <td>Main Auditorium</td>
+                        <td>₹100</td>
+                    </tr>
+                    <tr>
+                        <td>EVT-103</td>
+                        <td>DSA Workshop</td>
+                        <td>05 December 2026</td>
+                        <td>Seminar Hall B</td>
+                        <td>Free</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total Upcoming Events</td>
+                        <td>3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section class="card" id="registration">
+            <h2>Student Registration Form</h2>
+            <form action="#" method="post">
+                <fieldset style="border: none; padding: 0;">
+                    <legend><strong>Personal Details</strong></legend>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+
+                    <label for="userEmail">College Email:</label>
+                    <input type="email" id="userEmail" name="userEmail" required>
+
+                    <label for="userPassword">Create Password:</label>
+                    <input type="password" id="userPassword" name="userPassword" required>
+
+                    <label for="phoneNum">Phone Number:</label>
+                    <input type="tel" id="phoneNum" name="phoneNum" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </fieldset>
+
+                <br>
+
+                <fieldset style="border: none; padding: 0;">
+                    <legend><strong>Club Preferences</strong></legend>
+                    <label for="department">Select Your Department / Year:</label>
+                    <select id="department" name="department" required>
+                        <option value="">-- Choose an option --</option>
+                        <option value="btech_cse_1">B.Tech CSE - 1st Year</option>
+                        <option value="btech_cse_2">B.Tech CSE - 2nd Year</option>
+                        <option value="btech_it">B.Tech IT</option>
+                    </select>
+
+                    <label for="statement">Why do you want to join the Coding Club?</label>
+                    <textarea id="statement" name="statement" rows="4" placeholder="Share your expectations..."></textarea>
+                </fieldset>
+
+                <input type="submit" value="Register Now">
+                <input type="reset" value="Clear Form">
+            </form>
+        </section>
+
+        <section class="card" id="contact">
+            <h2>Contact Information</h2>
+            <p><strong>Official Email:</strong> codingclub@college.edu</p>
+           
+            <p><strong>Timings:</strong> Monday to Friday (4:30PM - 6:30 PM)</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Campus Coding Club. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
